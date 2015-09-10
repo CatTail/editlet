@@ -1,0 +1,28 @@
+{
+  "name": "editlet",
+  "version": "1.0.0",
+  "description": "Turn ugly textarea into editable editor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cattail/editlet.git"
+  },
+  "keywords": [
+    "bookmarklet",
+    "ace"
+  ],
+  "author": "CatTail",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cattail/editlet/issues"
+  },
+  "homepage": "https://github.com/cattail/editlet#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-uglify": "^1.4.1",
+    "gulp-wrap": "^0.11.0"
+  }
+}
