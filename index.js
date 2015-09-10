@@ -21,19 +21,27 @@
             ace.config.set('basePath', 'https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0');
             clearInterval(interval);
 
+            // toggle original textarea
+            if (editlet.mode) {
+                editlet.textarea.toggle();
+                return;
+            }
+
             // setup mode
             if (editlet.textarea) {
-                var mode = prompt('Setup editor mode');
-                editlet.editor.getSession().setMode('ace/mode/' + mode);
+                editlet.mode = prompt('Setup editor mode');
+                editlet.editor.getSession().setMode('ace/mode/' + editlet.mode);
                 return;
             }
 
             $(document).bind('click', handleClick);
 
             function handleClick(event) {
-                if (event.target.tagName === 'TEXTAREA') {
+                var target = event.target;
+                if (target.tagName === 'TEXTAREA' ||
+                    target.tagName === 'INPUT' && target.type === 'text') {
                     $(document).unbind('click', handleClick);
-                    editlet.textarea = $(event.target)/*.hide()*/;
+                    editlet.textarea = $(event.target).hide();
                     render()
                 }
             }
